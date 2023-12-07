@@ -5,31 +5,49 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="GamePage">
 
-    <VerticalStackLayout Padding="100" Spacing="25">
+    <VerticalStackLayout Padding="50" Spacing="25">
 
-        <Label
-            x:Name="QuestionLabel"
-            FontSize="36"
-            HorizontalOptions="Center"
-            VerticalOptions="Center" />
+        <VerticalStackLayout x:Name="QuestionArea" Spacing="35">
+            <Label
+                x:Name="QuestionLabel"
+                FontSize="36"
+                HorizontalOptions="CenterAndExpand" />
 
-        <Entry x:Name="Answer" HorizontalOptions="Center" />
+            <Entry
+                x:Name="AnswerEntry"
+                BackgroundColor="AliceBlue"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Placeholder="      " />
 
-        <Button
-            x:Name="SubmitAnswer"
-            Clicked="SubmitAnswer_Clicked"
-            HorizontalOptions="Center"
-            Text="Answer" />
+            <Button
+                x:Name="SubmitAnswerBtn"
+                Clicked="SubmitAnswer_Clicked"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Answer" />
 
-        <Label
-            x:Name="AnswerLabel"
-            HorizontalOptions="Center"
-            VerticalOptions="Center" />
+            <Label
+                x:Name="AnswerLabel"
+                FontSize="32"
+                HorizontalOptions="Center"
+                TextDecorations="Underline"
+                VerticalOptions="Center" />
+
+        </VerticalStackLayout>
 
         <Label
             x:Name="GameOverLabel"
+            FontSize="32"
             HorizontalOptions="Center"
             VerticalOptions="Center" />
+
+        <Button
+            x:Name="BackToMenuBtn"
+            Clicked="BackToMenu_Clicked"
+            HorizontalOptions="Center"
+            IsVisible="false"
+            Text="Back to Menu" />
 
     </VerticalStackLayout>
 </ContentPage>
