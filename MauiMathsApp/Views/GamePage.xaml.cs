@@ -1,4 +1,4 @@
-using MauiMathsApp.Models;
+﻿using MauiMathsApp.Models;
 
 namespace MauiMathsApp.Views;
 
@@ -22,15 +22,6 @@ public partial class GamePage : ContentPage
 
 	private void CreateNewQuestion()
 	{
-		var gameOperand = GameType switch
-		{
-			"Addition" => "+",
-			"Substraction" => "-",
-			"Multiplication" => "*",
-            "Division" => "/",
-			_ => ""
-        };
-
 		var random = new Random();
 
 		// Ternary operator
@@ -50,7 +41,7 @@ public partial class GamePage : ContentPage
 			}
 		}
 
-		QuestionLabel.Text = $"{firstNumber} {gameOperand} {secondNumber}";
+		QuestionLabel.Text = $"{firstNumber} {GameType} {secondNumber}";
     }
 
     private void SubmitAnswer_Clicked(object sender, EventArgs e)
@@ -63,16 +54,16 @@ public partial class GamePage : ContentPage
 
             switch (GameType)
             {
-                case "Addition":
+                case "+":
                     isCorrect = answer == firstNumber + secondNumber;
                     break;
-                case "Substraction":
+                case "-":
                     isCorrect = answer == firstNumber - secondNumber;
                     break;
-                case "Multiplication":
+                case "×":
                     isCorrect = answer == firstNumber * secondNumber;
                     break;
-                case "Division":
+                case "÷":
                     isCorrect = answer == firstNumber / secondNumber;
                     break;
             }
@@ -96,10 +87,10 @@ public partial class GamePage : ContentPage
 	{
 		GameOperation gameOperation = GameType switch
         {
-            "Addition" => GameOperation.Addition,
-            "Substraction" => GameOperation.Substraction,
-            "Multiplication" => GameOperation.Multiplication,
-            "Division" => GameOperation.Division,
+            "+" => GameOperation.Addition,
+            "-" => GameOperation.Substraction,
+            "×" => GameOperation.Multiplication,
+            "÷" => GameOperation.Division,
             _ => throw new NotImplementedException(),
         };
 

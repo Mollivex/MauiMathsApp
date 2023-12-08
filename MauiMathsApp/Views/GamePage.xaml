@@ -3,7 +3,8 @@
     x:Class="MauiMathsApp.Views.GamePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="GamePage">
+    Title="GamePage"
+    BackgroundImageSource="background1.jpg">
 
     <VerticalStackLayout Padding="50" Spacing="25">
 
@@ -15,10 +16,11 @@
 
             <Entry
                 x:Name="AnswerEntry"
-                BackgroundColor="AliceBlue"
+                BackgroundColor="Azure"
                 FontSize="30"
                 HorizontalOptions="Center"
-                Placeholder="      " />
+                Placeholder="      "
+                TextColor="Black" />
 
             <Button
                 x:Name="SubmitAnswerBtn"

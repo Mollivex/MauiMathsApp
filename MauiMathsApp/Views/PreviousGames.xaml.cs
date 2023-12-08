@@ -13,7 +13,7 @@ public partial class PreviousGames : ContentPage
 
     private void DeleteBtn_Clicked(object sender, EventArgs e)
     {
-        Button button = (Button)sender;
+        ImageButton button = (ImageButton)sender;
         App.GameRepository.Delete((int)button.BindingContext);
         gamesList.ItemsSource = App.GameRepository.GetAllGames();
     }

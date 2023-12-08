@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="MauiMathsApp.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundImageSource="background1.jpg">
 
     <ContentView>
         <VerticalStackLayout Padding="30" Spacing="50">
@@ -15,40 +16,43 @@
                 HorizontalOptions="Center"
                 Text="What would you like to play?" />
 
-            <Grid ColumnSpacing="5" RowSpacing="5">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
+            <Grid
+                ColumnDefinitions="*,*,*,*"
+                ColumnSpacing="15"
+                RowDefinitions="*,50"
+                RowSpacing="15">
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
 
                 <Button
                     Grid.Column="0"
                     Clicked="OnGameChosen"
-                    Text="Addition" />
+                    FontSize="42"
+                    MaximumWidthRequest="200"
+                    Text="+" />
                 <Button
                     Grid.Column="1"
                     Clicked="OnGameChosen"
-                    Text="Substraction" />
+                    FontSize="42"
+                    MaximumWidthRequest="200"
+                    Text="-" />
                 <Button
                     Grid.Column="2"
                     Clicked="OnGameChosen"
-                    Text="Multiplication" />
+                    FontSize="42"
+                    MaximumWidthRequest="200"
+                    Text="×" />
                 <Button
                     Grid.Column="3"
                     Clicked="OnGameChosen"
-                    Text="Division" />
+                    FontSize="42"
+                    MaximumWidthRequest="200"
+                    Text="÷" />
                 <Button
                     Grid.Row="1"
                     Grid.ColumnSpan="4"
                     BackgroundColor="ForestGreen"
                     Clicked="OnPreviousGameChosen"
+                    FontSize="24"
                     Text="View Previous Games" />
             </Grid>
         </VerticalStackLayout>
