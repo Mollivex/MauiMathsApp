@@ -1,3 +1,5 @@
+using MauiMathsApp.Models;
+
 namespace MauiMathsApp.Views;
 
 public partial class GamePage : ContentPage
@@ -92,9 +94,25 @@ public partial class GamePage : ContentPage
 
 	private void GameOver()
 	{
+		GameOperation gameOperation = GameType switch
+        {
+            "Addition" => GameOperation.Addition,
+            "Substraction" => GameOperation.Substraction,
+            "Multiplication" => GameOperation.Multiplication,
+            "Division" => GameOperation.Division,
+            _ => throw new NotImplementedException(),
+        };
+
 		QuestionArea.IsVisible = false;
 		BackToMenuBtn.IsVisible = true;
         GameOverLabel.Text = $"Game over! Your got {score} out of {totalQuestions} right";
+
+		App.GameRepository.Add(new Game
+		{
+			DatePlayed = DateTime.Now,
+			Type = gameOperation,
+			Score = score
+		});
 	}
 
     private void ProcessAnswer(bool isCorrect)

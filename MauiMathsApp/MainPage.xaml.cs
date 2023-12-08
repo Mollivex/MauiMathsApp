@@ -18,7 +18,7 @@ public partial class MainPage : ContentPage
 
     private void OnPreviousGameChosen(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new PreviousGamePage());
+        Navigation.PushAsync(new PreviousGames());
     }
 }
 
